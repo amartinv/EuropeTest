@@ -3,12 +3,25 @@
     <div class="row">
       <div class="col-md-8 col-md-offset-2">
         <div class="panel panel-default">
-          <div class="panel-heading">Example Component</div>
+          <div class="panel-heading title m-b-md">Form</div>
 
-          <div class="panel-body">
+          <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
             <form @submit.prevent="submit">
               <label for="name">Name:</label><br />
               <input
+                class="
+                  shadow
+                  appearance-none
+                  border
+                  rounded
+                  w-full
+                  py-2
+                  px-3
+                  text-gray-700
+                  leading-tight
+                  focus:outline-none focus:shadow-outline
+                  mb-5
+                "
                 v-model="fields.name"
                 type="text"
                 id="name"
@@ -16,6 +29,19 @@
               /><br />
               <label for="breed">Breed:</label><br />
               <input
+                class="
+                  shadow
+                  appearance-none
+                  border
+                  rounded
+                  w-full
+                  py-2
+                  px-3
+                  text-gray-700
+                  leading-tight
+                  focus:outline-none focus:shadow-outline
+                  mb-5
+                "
                 v-model="fields.breed"
                 type="text"
                 id="breed"
@@ -23,7 +49,24 @@
               />
               <br />
               <label for="size">Size:</label><br />
-              <select v-model="fields.size" name="size" id="size">
+              <select
+                class="
+                  shadow
+                  appearance-none
+                  border
+                  rounded
+                  w-full
+                  py-2
+                  px-3
+                  text-gray-700
+                  leading-tight
+                  focus:outline-none focus:shadow-outline
+                  mb-5
+                "
+                v-model="fields.size"
+                name="size"
+                id="size"
+              >
                 <option value="1">Big</option>
                 <option value="2">Medium</option>
                 <option value="3">Small</option>
@@ -31,6 +74,19 @@
               <br />
               <label for="weight">Weight in Kg:</label><br />
               <input
+                class="
+                  shadow
+                  appearance-none
+                  border
+                  rounded
+                  w-full
+                  py-2
+                  px-3
+                  text-gray-700
+                  leading-tight
+                  focus:outline-none focus:shadow-outline
+                  mb-5
+                "
                 v-model="fields.weight"
                 type="number"
                 step="any"
@@ -41,6 +97,19 @@
               <br />
               <label for="color">Hair color:</label><br />
               <input
+                class="
+                  shadow
+                  appearance-none
+                  border
+                  rounded
+                  w-full
+                  py-2
+                  px-3
+                  text-gray-700
+                  leading-tight
+                  focus:outline-none focus:shadow-outline
+                  mb-5
+                "
                 v-model="fields.color"
                 type="text"
                 id="color"
@@ -48,7 +117,24 @@
               />
               <br />
               <label for="hair">Hair length:</label><br />
-              <select v-model="fields.hair" name="hair" id="hair">
+              <select
+                class="
+                  shadow
+                  appearance-none
+                  border
+                  rounded
+                  w-full
+                  py-2
+                  px-3
+                  text-gray-700
+                  leading-tight
+                  focus:outline-none focus:shadow-outline
+                  mb-5
+                "
+                v-model="fields.hair"
+                name="hair"
+                id="hair"
+              >
                 <option value="1">Long</option>
                 <option value="2">Medium</option>
                 <option value="3">Short</option>
@@ -60,7 +146,22 @@
                 name="photo"
                 id="photo"
               />
-              <button type="submit">Send</button>
+              <br />
+              <button
+                class="
+                  mt-10
+                  bg-blue-500
+                  hover:bg-blue-700
+                  text-white
+                  font-bold
+                  py-2
+                  px-4
+                  rounded
+                "
+                type="submit"
+              >
+                Send
+              </button>
             </form>
           </div>
         </div>
