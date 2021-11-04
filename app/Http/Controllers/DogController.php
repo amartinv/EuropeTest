@@ -37,13 +37,18 @@ class DogController extends Controller
     public function store(Request $request)
     {
         try {
+
             $dog = Dog::create([
                 'name' => $request->input('name'),
                 'breed' => $request->input('breed'),
+                'size' => $request->input('size'),
+                'weight' => $request->input('weight'),
+                'color' => $request->input('color'),
+                'hair' => $request->input('hair'),
             ]);
             $request->file('photo')->storeAs('dogs', $dog->id . '.jpg');
         } catch (QueryException $e) {
-            return redirect('/');
+            return $e;
         }
         return redirect('/');
     }

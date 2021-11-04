@@ -17,6 +17,10 @@ class CreateDogsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('breed');
+            $table->integer('size');
+            $table->float('weight');
+            $table->string('color');
+            $table->integer('hair');
             $table->rememberToken();
             $table->timestamps();
         });
