@@ -8,6 +8,13 @@
 
     <title>Laravel</title>
 
+    <!-- CSRF Token -->
+    <script type="text/javascript">
+        window.CSRF_TOKEN = '{{ csrf_token() }}';
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
@@ -89,8 +96,9 @@
                 <div class="links">
                     <router-link to="/example">Example route</router-link>
                     <router-link to="/welcome">Welcome route</router-link>
-                    <router-view></router-view>
+                    <router-link to="/form">Form route</router-link>
                 </div>
+                <router-view></router-view>
             </div>
         </div>
 
