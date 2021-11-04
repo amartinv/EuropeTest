@@ -21,6 +21,13 @@
                 id="breed"
                 name="breed"
               />
+              <br />
+              <input
+                @change="photoUploaded"
+                type="file"
+                name="photo"
+                id="photo"
+              />
               <button type="submit">Send</button>
             </form>
           </div>
@@ -42,15 +49,22 @@ export default {
     submit() {
       this.errors = {};
 
-      fetch("/dogs", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "X-CSRF-TOKEN": window.CSRF_TOKEN,
-          "X-Requested-With": "XMLHttpRequest",
+      const formData = new FormData();
+      formData.append("name", this.fields.name);
+      formData.append("breed", this.fields.breed);
+      formData.append("photo", this.fields.photo);
+
+      axios.post("/dogs", formData).then(
+        function (result) {
+          console.log(result);
         },
-        body: JSON.stringify(this.fields),
-      }).then((res) => res);
+        function (error) {
+          console.log(error);
+        }
+      );
+    },
+    photoUploaded() {
+      this.fields.photo = document.querySelector("#photo").files[0];
     },
   },
 };
