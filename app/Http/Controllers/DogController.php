@@ -103,6 +103,6 @@ class DogController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Dog::find($id)->delete();
     }
 }

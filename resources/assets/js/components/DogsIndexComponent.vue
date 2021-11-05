@@ -45,7 +45,35 @@
                   <td class="">
                     {{ dog.color }}
                   </td>
-                  <td class=""></td>
+                  <td class="">
+                    <form
+                      class="inline"
+                      @submit.prevent="
+                        confirmDelete(
+                          'Are you sure you want to delete this entry?',
+                          dog.id
+                        )
+                      "
+                    >
+                      <button
+                        type="submit"
+                        class="
+                          fa
+                          rounded-full
+                          p-2
+                          my-1
+                          bg-red-500
+                          text-white
+                          transition-colors
+                          duration-200
+                          transform
+                          hover:bg-red-800
+                        "
+                      >
+                        <i class="fas fa-trash"></i>
+                      </button>
+                    </form>
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -64,9 +92,21 @@ export default {
     };
   },
   mounted() {
-    axios.get("/dogs").then((response) => {
-      this.dogs = response.data;
-    });
+    this.getDogs();
+  },
+  methods: {
+    confirmDelete(message, id) {
+      if (confirm(message)) {
+        axios.delete("/dogs/" + id).then((response) => {
+          this.getDogs();
+        });
+      }
+    },
+    getDogs() {
+      axios.get("/dogs").then((response) => {
+        this.dogs = response.data;
+      });
+    },
   },
 };
 </script>
