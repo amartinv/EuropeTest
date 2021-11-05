@@ -58,7 +58,7 @@ class DogController extends Controller
         } catch (QueryException $e) {
             return $e;
         }
-        return redirect('/');
+        return "sucess";
     }
 
     /**

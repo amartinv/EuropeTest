@@ -191,14 +191,11 @@ export default {
       formData.append("hair", this.fields.hair);
       formData.append("photo", this.fields.photo);
 
-      axios.post("/dogs", formData).then(
-        function (result) {
-          console.log(result);
-        },
-        function (error) {
-          console.log(error);
+      axios.post("/dogs", formData).then((response) => {
+        if (response.status == 200) {
+          this.$router.push("dogs");
         }
-      );
+      });
     },
     photoUploaded() {
       this.fields.photo = document.querySelector("#photo").files[0];
