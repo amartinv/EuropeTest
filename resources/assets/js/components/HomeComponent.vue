@@ -14,9 +14,9 @@
             <br />
             <p class="pt-5 mx-5 mb-5">
               Features:<br />
-              - You can add Dogs with a form with these parameters (Name, Breed,
+              - You can add dogs with a form with these parameters (Name, Breed,
               Size, Weight, Hair color, Hair length, photo).<br />
-              - When you add the dog it redirects you to the list of all
+              - When you add/update a dog it redirects you to the list of all
               animals.<br />
               - You can see all the dogs and their data in a table format<br />
               - You can delete entries in animal list<br />
