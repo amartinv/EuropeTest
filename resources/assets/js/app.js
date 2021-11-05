@@ -7,12 +7,12 @@ import VueRouter from 'vue-router';
 Vue.use(VueRouter);
 
 // Components
-import Example from './components/Example.vue';
+import HomeComponent from './components/HomeComponent.vue';
 import FormComponent from './components/FormComponent.vue';
 import DogsIndexComponent from './components/DogsIndexComponent.vue';
 
 const routes = [
-    { name: 'Example', path: '/example', component: Example},
+    { name: 'HomeComponent', path: '/', component: HomeComponent},
     { name: 'FormComponent', path: '/form', component: FormComponent},
     { name: 'DogsIndexComponent', path: '/dogs', component: DogsIndexComponent},
 ]
@@ -22,7 +22,7 @@ const router = new VueRouter({
     mode: "hash"
 })
 
-Vue.component('example', require('./components/Example.vue'));
+Vue.component('HomeComponent', require('./components/HomeComponent.vue'));
 Vue.component('form', require('./components/FormComponent.vue'));
 Vue.component('DogsIndexComponent', require('./components/DogsIndexComponent.vue'));
 

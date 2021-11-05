@@ -79,7 +79,7 @@
                         <div class="hidden sm:block sm:ml-6">
                             <div class="flex space-x-4">
 
-                                <router-link to="/example" class="bg-gray-800 text-white block px-3 py-2 rounded-md text-base font-medium">Example route</router-link>
+                                <router-link to="/" class="bg-gray-800 text-white block px-3 py-2 rounded-md text-base font-medium">Home</router-link>
                                 <router-link to="/dogs" class="bg-gray-800 text-white block px-3 py-2 rounded-md text-base font-medium">All Dogs</router-link>
                                 <router-link to="/form" class="bg-gray-800 text-white block px-3 py-2 rounded-md text-base font-medium">Form route</router-link>
                             </div>
@@ -92,7 +92,7 @@
             <div class="sm:hidden" id="mobile-menu">
                 <div class="px-2 pt-2 pb-3 space-y-1 bg-gray-800">
 
-                    <router-link to="/example" class="bg-gray-800 text-white block px-3 py-2 rounded-md text-base font-medium">Example route</router-link>
+                    <router-link to="/" class="bg-gray-800 text-white block px-3 py-2 rounded-md text-base font-medium">Home</router-link>
                     <router-link to="/dogs" class="bg-gray-800 text-white block px-3 py-2 rounded-md text-base font-medium">All Dogs</router-link>
                     <router-link to="/form" class="bg-gray-800 text-white block px-3 py-2 rounded-md text-base font-medium">Form route</router-link>
                 </div>
