@@ -53,6 +53,11 @@
         .m-b-md {
             margin-bottom: 30px;
         }
+
+        table tbody tr:nth-child(even) {
+            background-color: ghostwhite;
+
+        }
     </style>
 </head>
 
@@ -74,6 +79,7 @@
                             <div class="flex space-x-4">
 
                                 <router-link to="/example" class="bg-gray-800 text-white block px-3 py-2 rounded-md text-base font-medium">Example route</router-link>
+                                <router-link to="/dogs" class="bg-gray-800 text-white block px-3 py-2 rounded-md text-base font-medium">All Dogs</router-link>
                                 <router-link to="/form" class="bg-gray-800 text-white block px-3 py-2 rounded-md text-base font-medium">Form route</router-link>
                             </div>
                         </div>
@@ -86,12 +92,13 @@
                 <div class="px-2 pt-2 pb-3 space-y-1 bg-gray-800">
 
                     <router-link to="/example" class="bg-gray-800 text-white block px-3 py-2 rounded-md text-base font-medium">Example route</router-link>
+                    <router-link to="/dogs" class="bg-gray-800 text-white block px-3 py-2 rounded-md text-base font-medium">All Dogs</router-link>
                     <router-link to="/form" class="bg-gray-800 text-white block px-3 py-2 rounded-md text-base font-medium">Form route</router-link>
                 </div>
             </div>
         </nav>
 
-        <div class="flex-center position-ref h-full">
+        <div class="d-flex justify-content-center">
             @if (Route::has('login'))
             <div class="top-right links">
                 @if (Auth::check())

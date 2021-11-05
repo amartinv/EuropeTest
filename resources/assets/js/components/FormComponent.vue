@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container m-auto md:w-1/2">
     <div class="row">
       <div class="col-md-8 col-md-offset-2">
         <div class="panel panel-default">

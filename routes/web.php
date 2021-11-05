@@ -18,3 +18,4 @@ Route::get('/', function () {
 });
 
 Route::post('/dogs', 'DogController@store')->name('dogs.store');
+Route::get('/dogs', 'DogController@index')->name('dogs.index');

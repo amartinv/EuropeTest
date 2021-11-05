@@ -9,10 +9,12 @@ Vue.use(VueRouter);
 // Components
 import Example from './components/Example.vue';
 import FormComponent from './components/FormComponent.vue';
+import DogsIndexComponent from './components/DogsIndexComponent.vue';
 
 const routes = [
     { name: 'Example', path: '/example', component: Example},
     { name: 'FormComponent', path: '/form', component: FormComponent},
+    { name: 'DogsIndexComponent', path: '/dogs', component: DogsIndexComponent},
 ]
 
 const router = new VueRouter({
@@ -22,6 +24,7 @@ const router = new VueRouter({
 
 Vue.component('example', require('./components/Example.vue'));
 Vue.component('form', require('./components/FormComponent.vue'));
+Vue.component('DogsIndexComponent', require('./components/DogsIndexComponent.vue'));
 
 const app = new Vue({
     router
