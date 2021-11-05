@@ -74,7 +74,6 @@
                             <div class="flex space-x-4">
 
                                 <router-link to="/example" class="bg-gray-800 text-white block px-3 py-2 rounded-md text-base font-medium">Example route</router-link>
-                                <router-link to="/welcome" class="bg-gray-800 text-white block px-3 py-2 rounded-md text-base font-medium">Welcome route</router-link>
                                 <router-link to="/form" class="bg-gray-800 text-white block px-3 py-2 rounded-md text-base font-medium">Form route</router-link>
                             </div>
                         </div>
@@ -87,7 +86,6 @@
                 <div class="px-2 pt-2 pb-3 space-y-1 bg-gray-800">
 
                     <router-link to="/example" class="bg-gray-800 text-white block px-3 py-2 rounded-md text-base font-medium">Example route</router-link>
-                    <router-link to="/welcome" class="bg-gray-800 text-white block px-3 py-2 rounded-md text-base font-medium">Welcome route</router-link>
                     <router-link to="/form" class="bg-gray-800 text-white block px-3 py-2 rounded-md text-base font-medium">Form route</router-link>
                 </div>
             </div>
