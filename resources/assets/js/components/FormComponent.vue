@@ -27,6 +27,9 @@
                 id="name"
                 name="name"
               /><br />
+              <div v-if="errors.name" class="text-red-500">
+                {{ errors.name[0] }}<br />
+              </div>
               <label for="breed">Breed:</label><br />
               <input
                 class="
@@ -48,6 +51,9 @@
                 name="breed"
               />
               <br />
+              <div v-if="errors.breed" class="text-red-500">
+                {{ errors.breed[0] }}<br />
+              </div>
               <label for="age">Age:</label><br />
               <input
                 class="
@@ -71,6 +77,9 @@
                 name="age"
               />
               <br />
+              <div v-if="errors.age" class="text-red-500">
+                {{ errors.age[0] }}<br />
+              </div>
               <label for="size">Size:</label><br />
               <select
                 class="
@@ -95,6 +104,9 @@
                 <option value="3">Small</option>
               </select>
               <br />
+              <div v-if="errors.size" class="text-red-500">
+                {{ errors.size[0] }}<br />
+              </div>
               <label for="weight">Weight in Kg:</label><br />
               <input
                 class="
@@ -118,6 +130,9 @@
                 name="weight"
               />
               <br />
+              <div v-if="errors.weight" class="text-red-500">
+                {{ errors.weight[0] }}<br />
+              </div>
               <label for="color">Hair color:</label><br />
               <input
                 class="
@@ -139,6 +154,9 @@
                 name="color"
               />
               <br />
+              <div v-if="errors.color" class="text-red-500">
+                {{ errors.color[0] }}<br />
+              </div>
               <label for="hair">Hair length:</label><br />
               <select
                 class="
@@ -162,6 +180,10 @@
                 <option value="2">Medium</option>
                 <option value="3">Short</option>
               </select>
+
+              <div v-if="errors.hair" class="text-red-500">
+                {{ errors.hair[0] }}<br />
+              </div>
               <br />
               <input
                 @change="photoUploaded"
@@ -170,6 +192,9 @@
                 id="photo"
               />
               <br />
+              <div v-if="errors.photo" class="text-red-500">
+                {{ errors.photo[0] }}<br />
+              </div>
               <button
                 class="
                   mt-10
@@ -197,7 +222,16 @@
 export default {
   data() {
     return {
-      fields: {},
+      fields: {
+        name: "",
+        breed: "",
+        size: "",
+        weight: "",
+        color: "",
+        hair: "",
+        age: "",
+        photo: "",
+      },
       errors: {},
     };
   },
@@ -215,11 +249,16 @@ export default {
       formData.append("age", this.fields.age);
       formData.append("photo", this.fields.photo);
 
-      axios.post("/dogs", formData).then((response) => {
-        if (response.status == 200) {
-          this.$router.push("/dogs");
-        }
-      });
+      axios
+        .post("/dogs", formData)
+        .then((response) => {
+          if (response.status == 200) {
+            this.$router.push("/dogs");
+          }
+        })
+        .catch((error) => {
+          this.errors = error.response.data;
+        });
     },
     photoUploaded() {
       this.fields.photo = document.querySelector("#photo").files[0];

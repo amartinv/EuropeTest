@@ -38,6 +38,17 @@ class DogController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'name' => 'required',
+            'breed' => 'required',
+            'size' => 'required',
+            'weight' => 'required|numeric',
+            'color' => 'required',
+            'hair' => 'required',
+            'age' => 'required|numeric',
+            'photo' => 'required|image'
+        ]);
+
         try {
             $dog = Dog::create([
                 'name' => $request->input('name'),
@@ -92,6 +103,16 @@ class DogController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validate($request, [
+            'name' => 'required',
+            'breed' => 'required',
+            'size' => 'required',
+            'weight' => 'required|numeric',
+            'color' => 'required',
+            'hair' => 'required',
+            'age' => 'required|numeric',
+        ]);
+
         $dog = Dog::findOrFail($id);
         try {
             $dog->update([
