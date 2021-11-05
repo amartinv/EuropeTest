@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-8 col-md-offset-2">
         <div class="panel panel-default">
-          <div class="panel-heading title m-b-md">Form</div>
+          <div class="panel-heading title m-b-md">Create</div>
 
           <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
             <form @submit.prevent="submit">
