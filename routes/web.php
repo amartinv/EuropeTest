@@ -20,3 +20,5 @@ Route::get('/', function () {
 Route::post('/dogs', 'DogController@store')->name('dogs.store');
 Route::get('/dogs', 'DogController@index')->name('dogs.index');
 Route::delete('dogs/{id}', 'DogController@destroy')->name('dogs.destroy');
+Route::get('/dogs/{id}/edit', 'DogController@edit')->name('dogs.edit');
+Route::post('/dogs/{id}', 'DogController@update')->name('dogs.update');

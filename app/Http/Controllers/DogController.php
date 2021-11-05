@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Dog;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 
 class DogController extends Controller
 {
@@ -40,7 +39,6 @@ class DogController extends Controller
     public function store(Request $request)
     {
         try {
-
             $dog = Dog::create([
                 'name' => $request->input('name'),
                 'breed' => $request->input('breed'),
@@ -80,7 +78,8 @@ class DogController extends Controller
      */
     public function edit($id)
     {
-        //
+        $dog = Dog::findOrFail($id);
+        return $dog;
     }
 
     /**
@@ -92,7 +91,28 @@ class DogController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $dog = Dog::findOrFail($id);
+        try {
+            $dog->update([
+                'name' => $request->input('name'),
+                'breed' => $request->input('breed'),
+                'size' => $request->input('size'),
+                'weight' => $request->input('weight'),
+                'color' => $request->input('color'),
+                'hair' => $request->input('hair'),
+            ]);
+            $photo = $request->file('photo');
+            if ($photo != null) {
+                $request->file('photo')->storeAs(
+                    'dogs',
+                    $dog->id . '.jpg',
+                    'public'
+                );
+            }
+        } catch (QueryException $e) {
+            return $e;
+        }
+        return "success";
     }
 
     /**

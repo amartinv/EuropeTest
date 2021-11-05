@@ -6,7 +6,7 @@
           <div class="panel-heading title m-b-md">Form</div>
 
           <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-            <form @submit.prevent="submit">
+            <form @submit.prevent="update">
               <label for="name">Name:</label><br />
               <input
                 class="
@@ -160,7 +160,7 @@
                 "
                 type="submit"
               >
-                Send
+                Update
               </button>
             </form>
           </div>
@@ -172,6 +172,9 @@
 
 <script>
 export default {
+  mounted() {
+    this.retrieveDog(this.$route.params.id);
+  },
   data() {
     return {
       fields: {},
@@ -179,7 +182,7 @@ export default {
     };
   },
   methods: {
-    submit() {
+    update() {
       this.errors = {};
 
       const formData = new FormData();
@@ -191,14 +194,22 @@ export default {
       formData.append("hair", this.fields.hair);
       formData.append("photo", this.fields.photo);
 
-      axios.post("/dogs", formData).then((response) => {
-        if (response.status == 200) {
-          this.$router.push("/dogs");
-        }
-      });
+      axios
+        .post("/dogs/" + this.$route.params.id, formData)
+        .then((response) => {
+          if (response.status == 200) {
+            console.log("hola");
+            this.$router.push("/dogs");
+          }
+        });
     },
     photoUploaded() {
       this.fields.photo = document.querySelector("#photo").files[0];
+    },
+    retrieveDog(id) {
+      axios.get("/dogs/" + id + "/edit").then((response) => {
+        this.fields = response.data;
+      });
     },
   },
 };

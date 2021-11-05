@@ -88,6 +88,24 @@
                         <i class="fas fa-trash"></i>
                       </button>
                     </form>
+                    <div>
+                      <router-link
+                        :to="'/dogs/' + dog.id + '/edit'"
+                        class="
+                          fa
+                          rounded-full
+                          p-2
+                          my-1
+                          bg-green-500
+                          text-white
+                          transition-colors
+                          duration-200
+                          transform
+                          hover:bg-green-800
+                        "
+                        ><i class="fas fa-edit"></i
+                      ></router-link>
+                    </div>
                   </td>
                 </tr>
               </tbody>
