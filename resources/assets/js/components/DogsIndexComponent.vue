@@ -21,11 +21,14 @@
             >
               <thead class="table-fixed">
                 <tr class="border-b-2">
-                  <th class="w-1/5">Photo</th>
-                  <th class="w-1/5">Name</th>
-                  <th class="w-1/5">Breed</th>
-                  <th class="w-1/5">Color</th>
-                  <th class="w-1/5">Actions</th>
+                  <th class="">Photo</th>
+                  <th class="">Name</th>
+                  <th class="">Breed</th>
+                  <th class="">Color</th>
+                  <th class="">Hair type</th>
+                  <th class="">Weight</th>
+                  <th class="">Size</th>
+                  <th class="">Actions</th>
                 </tr>
               </thead>
               <tbody>
@@ -44,6 +47,18 @@
                   </td>
                   <td class="">
                     {{ dog.color }}
+                  </td>
+
+                  <td class="">
+                    <div v-if="dog.hair == 1">Long</div>
+                    <div v-if="dog.hair == 2">Medium</div>
+                    <div v-if="dog.hair == 3">Short</div>
+                  </td>
+                  <td class="">{{ dog.weight }}Kg</td>
+                  <td class="">
+                    <div v-if="dog.size == 1">Big</div>
+                    <div v-if="dog.size == 2">Medium</div>
+                    <div v-if="dog.size == 3">Small</div>
                   </td>
                   <td class="">
                     <form
