@@ -48,6 +48,29 @@
                 name="breed"
               />
               <br />
+              <label for="age">Age:</label><br />
+              <input
+                class="
+                  shadow
+                  appearance-none
+                  border
+                  rounded
+                  w-full
+                  py-2
+                  px-3
+                  text-gray-700
+                  leading-tight
+                  focus:outline-none focus:shadow-outline
+                  mb-5
+                "
+                v-model="fields.age"
+                type="number"
+                step="any"
+                min="0"
+                id="age"
+                name="age"
+              />
+              <br />
               <label for="size">Size:</label><br />
               <select
                 class="
@@ -192,6 +215,7 @@ export default {
       formData.append("weight", this.fields.weight);
       formData.append("color", this.fields.color);
       formData.append("hair", this.fields.hair);
+      formData.append("age", this.fields.age);
       formData.append("photo", this.fields.photo);
 
       axios

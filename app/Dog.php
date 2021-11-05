@@ -12,6 +12,6 @@ class Dog extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'breed', 'size', 'weight', 'color', 'hair'
+        'name', 'breed', 'size', 'weight', 'color', 'hair', 'age'
     ];
 }

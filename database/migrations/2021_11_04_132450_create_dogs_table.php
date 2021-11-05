@@ -21,6 +21,7 @@ class CreateDogsTable extends Migration
             $table->float('weight');
             $table->string('color');
             $table->integer('hair');
+            $table->integer('age');
             $table->rememberToken();
             $table->timestamps();
         });

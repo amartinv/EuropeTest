@@ -46,6 +46,7 @@ class DogController extends Controller
                 'weight' => $request->input('weight'),
                 'color' => $request->input('color'),
                 'hair' => $request->input('hair'),
+                'age' => $request->input('age'),
             ]);
 
             $request->file('photo')->storeAs(
@@ -100,6 +101,7 @@ class DogController extends Controller
                 'weight' => $request->input('weight'),
                 'color' => $request->input('color'),
                 'hair' => $request->input('hair'),
+                'age' => $request->input('age'),
             ]);
             $photo = $request->file('photo');
             if ($photo != null) {

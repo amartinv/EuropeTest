@@ -24,6 +24,7 @@
                   <th class="">Photo</th>
                   <th class="">Name</th>
                   <th class="">Breed</th>
+                  <th class="">Age</th>
                   <th class="">Color</th>
                   <th class="">Hair type</th>
                   <th class="">Weight</th>
@@ -44,6 +45,9 @@
                   </td>
                   <td class="">
                     {{ dog.breed }}
+                  </td>
+                  <td class="">
+                    {{ dog.age }}
                   </td>
                   <td class="">
                     {{ dog.color }}
