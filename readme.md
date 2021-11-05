@@ -20,8 +20,8 @@
 
 ## Features:
 
-- You can add Dogs with a form with these parameters (Name, Breed, Size, Weight, Hair color, Hair length, photo).
-- When you add the dog it redirects you to the list of all animals.
+- You can add dogs with a form with these parameters (Name, Breed, Size, Weight, Hair color, Hair length, photo).
+- When you add/update a dog it redirects you to the list of all animals.
 - You can see all the dogs and their data in a table format
 - You can delete entries in animal list
 - You can edit animal entries
@@ -48,3 +48,5 @@ A dog has these parameters:
 - Weight
 - Hair color
 - Hair length
+
+**You can find a set of screenshots in '/resources/demo_screenshots'**
