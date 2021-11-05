@@ -37,7 +37,7 @@
                   <td class="">
                     <img
                       class="h-32 w-32 m-auto"
-                      :src="'/storage/dogs/' + dog.id + '.jpg'"
+                      :src="'/storage/dogs/' + dog.id + '.jpg?rnd=' + cacheKey"
                     />
                   </td>
                   <td class="">
@@ -126,7 +126,13 @@ export default {
   data() {
     return {
       dogs: [],
+      cacheKey: +new Date(),
     };
+  },
+  created() {
+    this.interval = setInterval(() => {
+      this.cacheKey = +new Date();
+    }, 60 * 1000);
   },
   mounted() {
     this.getDogs();
