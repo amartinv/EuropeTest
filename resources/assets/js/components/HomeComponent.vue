@@ -21,6 +21,7 @@
               - You can see all the dogs and their data in a table format<br />
               - You can delete entries in animal list<br />
               - You can edit animal entries<br />
+              - Forms have validation <br />
               - The page is responsive <br />
             </p>
           </div>
